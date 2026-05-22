@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ATENÇÃO: Aqui estão os dois traços baixos de cada lado!
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Permite que o seu site no GitHub Pages converse com este servidor
 CORS(app)
@@ -45,5 +45,5 @@ def analisar_produto():
         return jsonify({"sucesso": False, "erro": str(e)}), 500
 
 # ATENÇÃO: Aqui também estão os dois traços baixos!
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(port=5000, debug=True)
