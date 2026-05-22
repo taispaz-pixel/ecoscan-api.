@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# CORREÇÃO: Dois traços baixos de cada lado de name
+# ATENÇÃO: Aqui estão os dois traços baixos de cada lado!
 app = Flask(_name_)
 
 # Permite que o seu site no GitHub Pages converse com este servidor
@@ -44,6 +44,6 @@ def analisar_produto():
     except Exception as e:
         return jsonify({"sucesso": False, "erro": str(e)}), 500
 
-# CORREÇÃO: Dois traços baixos também aqui no final
+# ATENÇÃO: Aqui também estão os dois traços baixos!
 if _name_ == '_main_':
     app.run(port=5000, debug=True)
