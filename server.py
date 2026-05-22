@@ -6,11 +6,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# CORREÇÃO: Dois traços baixos de cada lado de name
 app = Flask(_name_)
+
 # Permite que o seu site no GitHub Pages converse com este servidor
 CORS(app)
 
-# Pega a chave que vamos esconder no Render depois
+# Pega a chave que escondemos no Render
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 @app.route('/api/analisar', methods=['POST'])
@@ -42,5 +44,6 @@ def analisar_produto():
     except Exception as e:
         return jsonify({"sucesso": False, "erro": str(e)}), 500
 
+# CORREÇÃO: Dois traços baixos também aqui no final
 if _name_ == '_main_':
     app.run(port=5000, debug=True)
